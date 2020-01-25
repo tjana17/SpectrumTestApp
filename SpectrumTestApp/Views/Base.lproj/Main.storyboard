@@ -94,7 +94,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Companies" id="dz9-AO-gYX"/>
+                    <navigationItem key="navigationItem" title="Companies" id="dz9-AO-gYX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="sort" id="vNT-dh-thI">
+                            <connections>
+                                <action selector="sortingPressed:" destination="BYZ-38-t0r" id="vsn-aW-Sxg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="DsO-pC-nKR" id="yZJ-md-FSB"/>
                     </connections>
@@ -194,7 +200,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ezc-kb-n0U"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Members" id="NmL-Va-DqN"/>
+                    <navigationItem key="navigationItem" title="Members" id="NmL-Va-DqN">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="sort" id="v45-U3-12c">
+                            <connections>
+                                <action selector="sortingPressed:" destination="aqK-Cz-hHZ" id="tnd-rJ-cy3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="4bV-oh-omL" id="qOn-8i-xMc"/>
                     </connections>
@@ -223,6 +235,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sort" width="32" height="32"/>
         <image name="user" width="128" height="128"/>
     </resources>
 </document>
