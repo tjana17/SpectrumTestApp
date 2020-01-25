@@ -61,7 +61,7 @@ class MembersVC: UIViewController {
     
 }
 
-extension MembersVC : UITableViewDataSource {
+extension MembersVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isSearching ? filteredMembers.count : members.count
@@ -81,7 +81,27 @@ extension MembersVC : UITableViewDataSource {
         return cell
     }
     
-    
+    // Swipe cell to add favorites
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+           // action code for the Favorites
+           let favorites = UIContextualAction(style: .normal, title:  "Favorites", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+               print("Update action ...")
+               self.addFavorites(indexPath: indexPath)
+               success(true)
+           })
+           favorites.backgroundColor = .orange
+           
+           return UISwipeActionsConfiguration(actions: [favorites])
+       }
+       
+    func addFavorites(indexPath: IndexPath) {
+        
+        let favMember = members[indexPath.row]
+        let name = "\(favMember.name.first)  \(favMember.name.last)"
+        let memberDict = ["name": name, "age": favMember.age,"email": favMember.email,"_id":favMember.id,"phone":favMember.phone] as [String : Any]
+        saveUserDefaults(dict: memberDict, key: "FavoriteMember")
+        
+    }
     
 }
 

@@ -20,8 +20,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        
-        getDataFromURL()
+        if checkInternetAvailable(){
+            getDataFromURL()
+        } else {
+            presentAlert(withTitle: "No Internet!", message: "Please check your internet connection.")
+        }
         
         //Search Controller
         let searchController = UISearchController(searchResultsController: nil)
@@ -38,7 +41,7 @@ class ViewController: UIViewController {
         guard  let url =  URL(string: urlString) else {
             return
         }
-        
+        self.view.showLoading()
         // Session Task
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
@@ -57,6 +60,7 @@ class ViewController: UIViewController {
                 
                 //4. Dispatch reload tableview
                 DispatchQueue.main.async {
+                    self.view.stopLoading()
                     self.tableView.reloadData()
                 }
             } catch let jsonError {
@@ -127,7 +131,32 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // Swipe cell to add favorites
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+           // action code for the Favorites
+           let favorites = UIContextualAction(style: .normal, title:  "Favorites", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+               print("Update action ...")
+               self.addFavorites(indexPath: indexPath)
+               success(true)
+           })
+           favorites.backgroundColor = .orange
+           
+           return UISwipeActionsConfiguration(actions: [favorites])
+       }
+       
+       func addFavorites(indexPath: IndexPath) {
+           
+        let favCompany = companyModel[indexPath.row]
+        
+        let memberDict = ["_id": favCompany.id, "company": favCompany.company,"website": favCompany.website,"about":favCompany.about,"logo":favCompany.logo] as [String : Any]
+        saveUserDefaults(dict: memberDict, key: "FavoriteCompany")
+           
+           
+       }
+    
+    
 }
+
 
 
 extension ViewController : UISearchResultsUpdating {

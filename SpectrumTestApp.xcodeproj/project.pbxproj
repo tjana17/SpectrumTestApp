@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5202070F23DCB4EE0003D8A3 /* SaveDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202070E23DCB4EE0003D8A3 /* SaveDefaults.swift */; };
+		5202071123DCBB2D0003D8A3 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202071023DCBB2D0003D8A3 /* ActivityIndicatorView.swift */; };
+		5202071323DCBD730003D8A3 /* NetworkAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202071223DCBD730003D8A3 /* NetworkAvailability.swift */; };
 		5253043323DC1B8B008ACB46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253043223DC1B8B008ACB46 /* AppDelegate.swift */; };
 		5253043523DC1B8B008ACB46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253043423DC1B8B008ACB46 /* SceneDelegate.swift */; };
 		5253043723DC1B8C008ACB46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253043623DC1B8C008ACB46 /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5202070E23DCB4EE0003D8A3 /* SaveDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDefaults.swift; sourceTree = "<group>"; };
+		5202071023DCBB2D0003D8A3 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		5202071223DCBD730003D8A3 /* NetworkAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAvailability.swift; sourceTree = "<group>"; };
 		5253042F23DC1B8B008ACB46 /* SpectrumTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpectrumTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5253043223DC1B8B008ACB46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5253043423DC1B8B008ACB46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				5253045323DC2EF3008ACB46 /* UIImage+ImageCache.swift */,
+				5202070E23DCB4EE0003D8A3 /* SaveDefaults.swift */,
+				5202071023DCBB2D0003D8A3 /* ActivityIndicatorView.swift */,
+				5202071223DCBD730003D8A3 /* NetworkAvailability.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,7 +209,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5253044F23DC1E18008ACB46 /* Name.swift in Sources */,
+				5202070F23DCB4EE0003D8A3 /* SaveDefaults.swift in Sources */,
+				5202071323DCBD730003D8A3 /* NetworkAvailability.swift in Sources */,
 				5253043723DC1B8C008ACB46 /* ViewController.swift in Sources */,
+				5202071123DCBB2D0003D8A3 /* ActivityIndicatorView.swift in Sources */,
 				5253043323DC1B8B008ACB46 /* AppDelegate.swift in Sources */,
 				5253045123DC215B008ACB46 /* CompanyCell.swift in Sources */,
 				5253043523DC1B8B008ACB46 /* SceneDelegate.swift in Sources */,
