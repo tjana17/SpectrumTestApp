@@ -58,13 +58,37 @@
 			children = (
 				5253043223DC1B8B008ACB46 /* AppDelegate.swift */,
 				5253043423DC1B8B008ACB46 /* SceneDelegate.swift */,
-				5253043623DC1B8C008ACB46 /* ViewController.swift */,
-				5253043823DC1B8C008ACB46 /* Main.storyboard */,
+				5253044823DC1C1B008ACB46 /* Modal */,
+				5253044723DC1C0F008ACB46 /* Controllers */,
+				5253044623DC1BFC008ACB46 /* Views */,
 				5253043B23DC1B8E008ACB46 /* Assets.xcassets */,
 				5253043D23DC1B8E008ACB46 /* LaunchScreen.storyboard */,
 				5253044023DC1B8E008ACB46 /* Info.plist */,
 			);
 			path = SpectrumTestApp;
+			sourceTree = "<group>";
+		};
+		5253044623DC1BFC008ACB46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5253043823DC1B8C008ACB46 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5253044723DC1C0F008ACB46 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5253043623DC1B8C008ACB46 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5253044823DC1C1B008ACB46 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
