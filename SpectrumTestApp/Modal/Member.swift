@@ -13,7 +13,7 @@ struct Member : Decodable {
     let id      : String
     let age     : Int
     let email   : String
-    let name    : [Name]
+    let name    : Name
     let phone   : String
     
     enum CodingKeys : String, CodingKey {

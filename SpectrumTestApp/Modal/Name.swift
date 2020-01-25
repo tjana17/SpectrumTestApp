@@ -14,7 +14,7 @@ struct Name : Decodable {
     let last    : String
     
     enum CodingKeys: String, CodingKey {
-        case first = "first"
-        case last = "last"
+        case first  = "first"
+        case last   = "last"
     }
 }
