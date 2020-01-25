@@ -57,15 +57,26 @@ class ViewController: UIViewController {
         }.resume()
         
     }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "membersVC") {
+            let destination = segue.destination as! MembersVC
+            if let indexPath = tableView.indexPathForSelectedRow?.row {
+                destination.members = companyModel[indexPath].members
+            }
+        }
+    }
 
 
 }
 
-extension ViewController : UITableViewDataSource {
+extension ViewController : UITableViewDataSource, UITableViewDelegate {
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companyModel.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "companyCell", for: indexPath) as! CompanyCell
         
@@ -74,4 +85,5 @@ extension ViewController : UITableViewDataSource {
         
         return cell
     }
+    
 }
